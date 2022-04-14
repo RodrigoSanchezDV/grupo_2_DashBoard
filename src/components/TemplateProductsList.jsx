@@ -1,8 +1,9 @@
-import React from "react"
+import React from "react";
+import { Link } from "react-router-dom";
 let MovieList = (props)=>{
     return(
         <React.Fragment>
-			<h1 className="h3 mb-2 text-gray-800">All the movies in the Database</h1>				
+			<Link to="/products" className="h3 mb-2 text-gray-800">Products in Data Base</Link>				
 			<div className="card shadow mb-4">
 				<div className="card-body">
 					<div className="table-responsive">
@@ -10,19 +11,19 @@ let MovieList = (props)=>{
 							<thead>
 								<tr>
                                     <th>Id</th>
-                                    <th>Titulo</th>
-                                    <th>Calificación</th>
-                                    <th>Premios</th>
-                                    <th>Duración</th>
+                                    <th>Nombre</th>
+                                    <th>Desripcion</th>
+                                    <th>Categoria</th>
+                                    <th>Detalles</th>
 								</tr>
 							</thead>
 							<tfoot>
 								<tr>
                                     <th>Id</th>
-                                    <th>Titulo</th>
-                                    <th>Calificación</th>
-                                    <th>Premios</th>
-                                    <th>Duración</th>
+                                    <th>Nombre</th>
+                                    <th>Desripcion</th>
+                                    <th>Categoria</th>
+                                    <th>Detalles</th>
 								</tr>
 							</tfoot>
 							<tbody>

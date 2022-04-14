@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom"
 function UserDetail() {
 
     const {id} = useParams();
-    console.log(id)
     const [Users,setUsers]=useState([]);
     
     useEffect(()=>{

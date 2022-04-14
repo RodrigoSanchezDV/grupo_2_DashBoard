@@ -1,30 +1,48 @@
-import React from 'react';
+import React,{useState, useEffect} from "react"
 import SmallCard from './SmallCard';
 
-let productInDataBase = {
-    color:   "primary",
-    titulo: "Movies in Data Base",
-    valor: 21,
-    icono: "fas fa-film",
-}
-
-let amount ={
-    color:   "success",
-    titulo: "Total awards",
-    valor: 79,
-    icono: "fas fa-award",
-}
-
-let user = {
-    color:   "warning",
-    titulo: "Actors quantity",
-    valor: 49,
-    icono: "fas fa-user",
-}
-
-let cardProps = [productInDataBase,amount,user];
 
 function ContentRowTop(){
+    
+    const [TotalUsers,setTotalUsers]=useState([]);
+    const [TotalProducts,setTotalProducts]=useState([]);
+    const [TotalCategories, setTotalCategories]=useState([])
+
+    useEffect(()=>{
+        fetch("http://localhost:3001/api/users")
+        .then(res => res.json())
+        .then(data => setTotalUsers(data.count))
+    },([]))
+    useEffect(()=>{
+        fetch("http://localhost:3001/api/products")
+        .then(res => res.json())
+        .then(data => setTotalProducts(data.count))
+    },([]))
+    useEffect(()=>{
+        fetch("http://localhost:3001/api/products")
+        .then(res => res.json())
+        .then(data => setTotalCategories(data.countByCategory.length))
+    },([]))
+
+    let cardProps = [
+        {
+            title:"all registered users",
+            count: TotalUsers,
+            icon: "fas fas fa-user fa-2x"
+        },
+        {    
+            title:"All products",
+            count: TotalProducts,
+            icon: "fas fas fa-truck fa-2x"
+        },
+        {
+            title:"All categories",
+            count: TotalCategories,
+            icon: "fas fas fa-car fa-2x"
+        }
+    ];
+
+
     return (
         <React.Fragment>
         <div className="row">
