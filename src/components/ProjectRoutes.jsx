@@ -8,7 +8,7 @@ import ContentRowMovies from "./ContentRowMovies"
 import UserDetailComp from "./UserDetail"
 import ProductsComp from "./Products"
 import ProductDetailComp from "./ProductDetail"
-
+import CategoriesDataComp from "./CategoriesData"
 
 const UsersComp = () => {return (<Template> <UsersInDb/> </Template>)};
 const NewMovieComp = () => {return (<Template> <NewMovie/> </Template>)};
@@ -16,6 +16,7 @@ const ContentRowMoviesComp = () => {return(<Template> <ContentRowMovies/> </Temp
 const UserDetail = ()=>{return (<Template>  <UserDetailComp/> </Template>)};
 const ListProducts = ()=>{return (<Template>  <ProductsComp/> </Template>)};
 const ProducDetail = ()=>{return (<Template>  <ProductDetailComp/> </Template>)};
+const CategoriesData=()=>{return(<Template>  <CategoriesDataComp/> </Template>)}
 
 const ProjectRoutes = ()=>{
     return(
@@ -27,7 +28,8 @@ const ProjectRoutes = ()=>{
                 <Route path="/products" element={<ListProducts/>}/>
                 <Route path="/products/:id" element={<ProducDetail/>}/>
                 <Route path='/newmovie' element={<NewMovieComp/>}/>
-                <Route path='/infoMovie' element={<ContentRowMoviesComp/>}/>
+                <Route path='/allcategories' element={<CategoriesData/>}/>
+                <Route path='/data' element={<ContentRowMoviesComp/>}/>
             </Routes>
         </React.Fragment>
     )

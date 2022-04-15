@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from "react-router-dom";
 function SmallCard(props){
     return(
         <React.Fragment>
@@ -10,8 +10,9 @@ function SmallCard(props){
                             <div className="col mr-2">
                                 <div className={`text-xs font-weight-bold text-uppercase mb-1`}> {props.title}</div>
                                 <div className="h5 mb-0 font-weight-bold text-gray-800">{props.count}</div>
+                                <Link to={props.url}>More Details</Link>
                             </div>
-                            <div className="col-auto">
+                            <div className="col-auto">                       
                                 <i className={`fas ${props.icon} fa-2x text-gray-300`}></i>
                             </div>
                         </div>
@@ -21,4 +22,5 @@ function SmallCard(props){
         </React.Fragment>
     )
 }
+
 export default SmallCard;

@@ -16,29 +16,27 @@ function ContentRowTop(){
     useEffect(()=>{
         fetch("http://localhost:3001/api/products")
         .then(res => res.json())
-        .then(data => setTotalProducts(data.count))
-    },([]))
-    useEffect(()=>{
-        fetch("http://localhost:3001/api/products")
-        .then(res => res.json())
-        .then(data => setTotalCategories(data.countByCategory.length))
+        .then(data => {setTotalProducts(data.count),setTotalCategories(data.countByCategory.length)})
     },([]))
 
     let cardProps = [
         {
-            title:"all registered users",
+            title: "All registered users",
             count: TotalUsers,
-            icon: "fas fas fa-user fa-2x"
+            icon: "fas fas fa-user fa-2x",
+            url: "/users"
         },
         {    
-            title:"All products",
+            title: "All products",
             count: TotalProducts,
-            icon: "fas fas fa-truck fa-2x"
+            icon: "fas fas fa-truck fa-2x",
+            url: "/products"
         },
         {
-            title:"All categories",
+            title: "All categories",
             count: TotalCategories,
-            icon: "fas fas fa-car fa-2x"
+            icon: "fas fas fa-car fa-2x",
+            url: "/allcategories"
         }
     ];
 
