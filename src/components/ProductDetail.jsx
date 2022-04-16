@@ -14,8 +14,9 @@ function Movie(){
             setProductDetail(data.productData))
         },([]));
         let a = ProductDetail.color && ProductDetail.color[0].name? ProductDetail.color[0].name:"red"
+        console.log(a)
         const changeColor=()=>{
-            colorProduct.current.style.color= "#"+ a
+            colorProduct.current.style.color= a
         }
 
     return(
