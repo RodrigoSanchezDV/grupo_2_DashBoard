@@ -8,7 +8,6 @@ function ContentWrapper(){
         <React.Fragment>
             <div id="content-wrapper" className="d-flex flex-column">
                 <div id="content">
-                    <TopBar/>
                     <ContentRowTop />
                     <Movie />
                     <Footer />

@@ -1,8 +1,8 @@
 import React from 'react';
 
 import GenresInDb from './UsersInDb';
-import ContentRowMovies from './ContentRowMovies';
-import NewMovie from './NewMovie';
+import ContentRowMovies from './ContentRowProducts';
+import NewMovie from './LastProduct';
 
 function ContentRowTop(){
     return(

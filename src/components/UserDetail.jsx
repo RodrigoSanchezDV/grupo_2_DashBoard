@@ -21,10 +21,12 @@ function UserDetail() {
                     </div>
                     <div className="card-body">
                         <div className="row">
-                            <p>{Users.name}</p>
+                            {
+                                Users.name?<p>{Users.name}</p>:"User not found"
+                            }
                             
                         </div>
-                        <p>{Users.email}</p>
+                        {Users.email? <p>{Users.email}</p>:""}
                     </div>
                 </div>
             </div>

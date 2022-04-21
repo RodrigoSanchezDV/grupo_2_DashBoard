@@ -5,16 +5,15 @@ function Movie(){
     const colorProduct = useRef();
     
 	const {id} = useParams();
-    const [ProductDetail,setProductDetail]=useState([]);
+    const [ProductDetail,setProductDetail]=useState([])
     
     useEffect(()=>{
         fetch(`http://localhost:3001/api/products/${id}`)
         .then(res => res.json())
-        .then(data => 
-            setProductDetail(data.productData))
-        },([]));
-        let a = ProductDetail.color && ProductDetail.color[0].name? ProductDetail.color[0].name:"red"
-        console.log(a)
+        .then(data => setProductDetail(data.productData))
+    },([]));
+
+        let a = ProductDetail.color && ProductDetail.color[0]? ProductDetail.color[0].name:"red"
         const changeColor=()=>{
             colorProduct.current.style.color= a
         }
@@ -22,20 +21,32 @@ function Movie(){
     return(
 		<React.Fragment >
             {   
-                ProductDetail.category && ProductDetail.category.name?
-                <h2 onMouseOver={changeColor}>{ProductDetail.category.name}</h2>: <p>Loading...</p>
+                ProductDetail.category && ProductDetail.category.name?  <h2>{ProductDetail.category.name}</h2>: "Product not found"
             }
-            <h1 >{ProductDetail.name} </h1>
-            <p >{ProductDetail.description}</p> 
-            <img src={ProductDetail.image1}/>
-            <p >{ProductDetail.price}</p>
+
+            {
+                ProductDetail.name?<h1 >{ProductDetail.name} </h1>:""
+            }
+
+            {
+                ProductDetail.description?<p >{ProductDetail.description}</p> :""
+            }
+
+            {
+                ProductDetail.image1?<img src={ProductDetail.image1}/>:""
+            }
+
+            {
+                ProductDetail.price?<p >{ProductDetail.price}</p>:""
+            }
+            
             {   
-                ProductDetail.size && ProductDetail.size[0].name?
-                <p >{ProductDetail.size[0].name}</p>: <p>Loading...</p>
+                ProductDetail.size && ProductDetail.size[0] && Error !== "Product not found"?
+                <p >{ProductDetail.size[0].name}</p>: ""
             }
             {   
-                ProductDetail.color && ProductDetail.color[0].name?
-                <p ref={colorProduct} onMouseOver={changeColor} className="fas fas fa-circle fa-2x"></p>: <p>Loading...</p>
+                ProductDetail.color && ProductDetail.color[0] && Error !== "Product not found"?
+                <p ref={colorProduct} onMouseOver={changeColor} className="fas fas fa-circle fa-2x"></p>: ""
             }
             
         </React.Fragment> 
