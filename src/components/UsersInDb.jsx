@@ -1,10 +1,11 @@
-import React,{useState, useEffect} from "react"
+import React,{useState, useEffect} from "react";
+import { Link } from "react-router-dom";
 import UsersComponent from "./Users";
 
 function GenresInDb() {
 
     const [Users,setUsers]=useState([]);
-    
+
     useEffect(()=>{
         fetch("http://localhost:3001/api/users")
         .then(res => res.json())
@@ -16,9 +17,9 @@ function GenresInDb() {
             <div className="col-lg-6 mb-4">
                 <div className="card shadow mb-4">
                     <div className="card-header py-3">
-                        <h6 className="m-0 font-weight-bold text-gray-800">
+                        <Link to="/users"className="m-0 font-weight-bold text-gray-800">
                             Users in Data Base
-                        </h6>
+                        </Link>
                     </div>
                     <div className="card-body">
                         <div className="row">

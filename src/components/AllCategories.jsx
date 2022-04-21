@@ -9,7 +9,7 @@ function AllCategories(props){
                         <p>{props.name}</p>
                         <p>Quantity: {props.quantity}</p>
                     </div>
-                        <img src={`http://localhost:3001/uploads/products/${props.img}`} />                  
+                        <img src={`http://localhost:3001/uploads/products/${props.img}`}alt="" />                  
                 </div>
             </div>
         </React.Fragment>

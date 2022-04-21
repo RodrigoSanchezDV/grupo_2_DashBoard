@@ -1,6 +1,6 @@
 import React from 'react';
 import image from '../assets/images/logo_blanco.svg';
-import { Link, Route, Switch } from "react-router-dom";
+import {Link} from "react-router-dom";
 
 function SideBar(){
     return(

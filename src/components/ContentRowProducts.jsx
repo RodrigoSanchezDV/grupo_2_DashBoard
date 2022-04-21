@@ -16,7 +16,7 @@ function ContentRowTop(){
     useEffect(()=>{
         fetch("http://localhost:3001/api/products")
         .then(res => res.json())
-        .then(data => {setTotalProducts(data.count),setTotalCategories(data.countByCategory.length)})
+        .then(data => {setTotalProducts(data.count);setTotalCategories(data.countByCategory.length)})
     },([]))
 
     let cardProps = [
@@ -46,7 +46,7 @@ function ContentRowTop(){
         <div className="row">
             {
                 cardProps.map((producto,index)=>{
-                    return <SmallCard  {...producto}  key = {index}/>
+                    return <SmallCard  {...producto}  key={index}/>
                 })
             }      
         </div>

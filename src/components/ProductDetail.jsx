@@ -33,7 +33,7 @@ function Movie(){
             }
 
             {
-                ProductDetail.image1?<img src={ProductDetail.image1}/>:""
+                ProductDetail.image1?<img src={ProductDetail.image1} alt=""/>:""
             }
 
             {

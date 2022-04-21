@@ -2,7 +2,6 @@ import React from 'react';
 import ContentRowTop from './ContentRowTop';
 import Movie from './Products';
 import Footer from './Footer';
-import TopBar from "./TopBar"
 function ContentWrapper(){
     return (
         <React.Fragment>
