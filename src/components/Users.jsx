@@ -6,9 +6,9 @@ function Genre(props){
             <div className="col-lg-6 mb-4">
                 <div className="card text-white bg-dark  shadow">
                     <div className="card-body">
-                    <p>Nombre: {props.name}</p>
-                        <p>Email: {props.email}</p>
-                        <Link to={`/users/${props.id}`}>Ir a detalles</Link>
+                    <p>{props.name}</p>
+                        <p> {props.email}</p>
+                        <Link to={`/users/${props.id}`}>Details</Link>
                     </div>
                 </div>
             </div>

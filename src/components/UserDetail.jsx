@@ -22,9 +22,11 @@ function UserDetail() {
                     <div className="card-body">
                         <div className="row">
                             {
+                                Users.avatar? <img src={Users.avatar} alt="Avatar not found"/>:""
+                            }
+                            {
                                 Users.name?<p>{Users.name}</p>:"User not found"
                             }
-                            
                         </div>
                         {Users.email? <p>{Users.email}</p>:""}
                     </div>

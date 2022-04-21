@@ -15,7 +15,7 @@ function NewMovie () {
         <div className="col-lg-6 mb-4">
             <div className="card shadow mb-4">
                 <div className="card-header py-3">
-                    <h5 className="m-0 font-weight-bold text-gray-800">Last product added</h5>
+                    {LastProduct && LastProduct.id !== undefined? <Link to={`/products/${LastProduct.id}`} className="m-0 font-weight-bold text-gray-800">Last product added</Link>:""}
                 </div>
                 <div className="card-body">
                     <div className="text-center">
@@ -23,7 +23,7 @@ function NewMovie () {
                     </div>
                     <p>{LastProduct && LastProduct.description !== undefined? LastProduct.description : "Loading"}</p>
                     <p>{LastProduct && LastProduct.name !== undefined?LastProduct.name:""}</p>
-                    {LastProduct && LastProduct.id !== undefined? <Link to={`/products/${LastProduct.id}`}>Details</Link>:""}
+                    
                 </div>
             </div>
         </div>
