@@ -6,7 +6,7 @@ function UserDetail() {
     const [Users,setUsers]=useState([]);
     
     useEffect(()=>{
-        fetch(`http://localhost:3001/api/users/${id}`)
+        fetch(`http://localhost:3000/api/users/${id}`)
         .then(res => res.json())
         .then(data => setUsers(data.userData))
     },([]))

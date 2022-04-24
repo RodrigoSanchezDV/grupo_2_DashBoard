@@ -9,12 +9,12 @@ function ContentRowTop(){
     const [TotalCategories, setTotalCategories]=useState([])
 
     useEffect(()=>{
-        fetch("http://localhost:3001/api/users")
+        fetch("http://localhost:3000/api/users")
         .then(res => res.json())
         .then(data => setTotalUsers(data.count))
     },([]))
     useEffect(()=>{
-        fetch("http://localhost:3001/api/products")
+        fetch("http://localhost:3000/api/products")
         .then(res => res.json())
         .then(data => {setTotalProducts(data.count);setTotalCategories(data.countByCategory.length)})
     },([]))

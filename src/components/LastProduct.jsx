@@ -6,7 +6,7 @@ function NewMovie () {
     const [LastProduct,setLastProduct]=useState();
     
     useEffect(()=>{
-        fetch("http://localhost:3001/api/products")
+        fetch("http://localhost:3000/api/products")
         .then(res => res.json())
         .then(data => setLastProduct(data.Products[data.Products.length - 1]))
     },([]))
@@ -19,7 +19,7 @@ function NewMovie () {
                 </div>
                 <div className="card-body">
                     <div className="text-center">
-                    {LastProduct && LastProduct.image1 !== undefined? <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{width: 40 +'rem'}} src={`http://localhost:3001/uploads/products/${LastProduct.image1}`} alt=" Star Wars - Mandalorian " /> : "Loading"}    
+                    {LastProduct && LastProduct.image1 !== undefined? <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{width: 40 +'rem'}} src={`http://localhost:3000/uploads/products/${LastProduct.image1}`} alt=" Star Wars - Mandalorian " /> : "Loading"}    
                     </div>
                     <p>{LastProduct && LastProduct.description !== undefined? LastProduct.description : "Loading"}</p>
                     <p>{LastProduct && LastProduct.name !== undefined?LastProduct.name:""}</p>

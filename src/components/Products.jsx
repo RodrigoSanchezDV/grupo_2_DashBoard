@@ -6,7 +6,7 @@ function Movie(){
 	const [AllProducts,setAllProducts]=useState([]);
     
     useEffect(()=>{
-        fetch("http://localhost:3001/api/products")
+        fetch("http://localhost:3000/api/products")
         .then(res => res.json())
         .then(data => setAllProducts(data.Products))
     },([]))

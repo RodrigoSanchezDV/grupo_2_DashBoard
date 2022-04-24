@@ -5,7 +5,7 @@ function CategoiesData() {
     const [Categories,setCategories]=useState();
     
     useEffect(()=>{
-        fetch("http://localhost:3001/api/products")
+        fetch("http://localhost:3000/api/products")
         .then(res => res.json())
         .then(data => setCategories(data.countByCategory))
     },([]))

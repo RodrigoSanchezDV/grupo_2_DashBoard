@@ -8,7 +8,7 @@ function Movie(){
     const [ProductDetail,setProductDetail]=useState([])
     
     useEffect(()=>{
-        fetch(`http://localhost:3001/api/products/${id}`)
+        fetch(`http://localhost:3000/api/products/${id}`)
         .then(res => res.json())
         .then(data => setProductDetail(data.productData))
     },([]));
